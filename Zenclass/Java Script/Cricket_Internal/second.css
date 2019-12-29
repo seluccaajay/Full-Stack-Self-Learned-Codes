@@ -1,0 +1,25 @@
+.team1sc{
+  height: 350px;
+  width: 350px;
+  border-style: solid;
+  border-color: blue;
+}
+.team2sc{
+  height: 350px;
+width: 350px;
+border-style: solid;
+border-color:blue;
+margin-left: 71%;
+margin-top: -27%;
+}
+body{
+  background-image: url("https://st2.depositphotos.com/1755195/12145/i/950/depositphotos_121458362-stock-photo-abstract-blue-light-color-background.jpg");
+}
+.winner{
+  height: 350px;
+width: 350px;
+border-style: solid;
+border-color:blue;
+margin-left: 35%;
+margin-top: -13%;
+}

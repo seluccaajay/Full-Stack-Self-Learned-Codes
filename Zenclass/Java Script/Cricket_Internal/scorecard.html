@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SCORECARD</title>
+    <link rel="stylesheet" href="second.css">
+    <script src="cricket.js">
+</script>
+  </head>
+  <body>
+    <div class="team1sc">
+      <h2>TEAM 1 SCORE CARD</h2>
+        OVER 1:<over1 id="over1"></over1><br>
+        OVER 2:<over2 id="over2"></over2><br>
+        OVER 3:<over3 id="over3"></over3><br>
+        <button onclick="winner()" name="t1score">VIEW TEAM 1 SCORE</button>
+    </div>
+    <div class="team2sc">
+      <h2>TEAM 2 SCORE CARD</h2>
+      OVER 4:<over4 id="over4"></over4><br>
+      OVER 5:<over5 id="over5"></over5><br>
+      OVER 6:<over6 id="over6"></over6><br>
+        <button onclick="winner2()" name="t2score">VIEW TEAM 2 SCORE</button>
+    </div>
+    <div class="winner">
+      <h2>THE WINNER IS</h2>
+      <button onclick="result()" name="t1score">VIEW RESULT</button><br><br>
+      RESULT: <result id="result"></result>
+    </div>
+  </body>
+</html>
