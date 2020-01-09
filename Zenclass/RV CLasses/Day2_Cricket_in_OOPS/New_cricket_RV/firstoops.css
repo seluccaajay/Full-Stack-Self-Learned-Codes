@@ -1,0 +1,29 @@
+body{
+  background-image: url("https://www.createdigital.org.au/wp-content/uploads/2018/01/cricket-1-700x400.jpg");
+
+background-repeat: no-repeat;
+}
+
+#tem1Board{
+background-color: beige;
+color: black;
+}
+
+#tem2board{
+  background-color: black;
+  color: antiquewhite;
+}
+
+#team1{
+ background-color: brown;
+ color: whitesmoke;
+}
+
+#team2{
+  background-color:green;
+  color:whitesmoke;
+  
+  margin-bottom: -17%;
+  
+  margin-right: 60%;
+}
