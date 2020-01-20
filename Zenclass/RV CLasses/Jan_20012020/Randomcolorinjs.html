@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="board">
+    <script>
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+             }
+            return color;
+        }
+        for(let i=0;i<10;i++){
+             var colorbox = document.createElement('div');
+             colorbox.style.backgroundColor= getRandomColor();
+             colorbox.style.height='250px';
+             colorbox.style.width='250px';
+             colorbox.style.margin = '10px';
+             colorbox.style.display = 'inline-block';
+             document.getElementById('board').appendChild(colorbox);
+
+        }
+ </script>
+   </div>
+</body>
+</html>
