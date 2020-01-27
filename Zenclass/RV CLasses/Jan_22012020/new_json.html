@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+     #form-1{
+      height: 500px;
+      width: 300px;
+      background-color:white;
+      border-style: solid;
+      box-shadow: 8px 8px 8px;
+      border-color: whitesmoke;
+      margin-left: 25%;
+}
+#form2 {
+    height: 300px;
+width: 200px;
+background-color:
+white;
+border-style: solid;
+box-shadow: 8px 8px 8px;
+border-color:
+whitesmoke;
+margin-left: 52%;
+margin-top: -41%;
+}
+body
+     p{
+         font-family: Georgia, 'Times New Roman', Times, serif;
+         color: springgreen;
+         font-style: italic;
+         font-variant: small-caps;
+         font-size: 20px;
+         margin-left: 92PX;
+     }
+     #description{
+         padding: 25px;
+         margin-left: 42px;
+
+     }
+     #productname,#baseprice{
+    margin-left: 63px;
+}
+#imagelink{
+    width:294px;
+}
+#basic-btn{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+         font-style: italic;
+         font-variant: small-caps;
+    background-color: white;
+    color:black;
+    border-color: chartreuse;
+    border-style: solid;
+    border-radius: 25px;
+    margin-left: 9px;
+    height: 31px;
+    width:275px;
+    margin-top: 45px;
+
+
+}
+    </style>
+</head>
+<body>
+    <script>
+        var myform =document.createElement("form");
+        myform.id="form-1";
+        var a=document.createElement("p");
+        a.innerHTML="productname";
+        var productname=document.createElement("input");
+        productname.id="productname";
+        var description=document.createElement("input");
+        description.type="textbox";
+        description.id="description";
+        description.type="required";
+        var b=document.createElement("p");
+        b.innerHTML="description";
+        var c =document.createElement("p");
+        c.innerHTML="Base price";
+        var baseprice=document.createElement("input");
+        baseprice.id="baseprice";
+        var d =document.createElement("p");
+        d.innerHTML="Image-Link";
+        var imagelink=document.createElement("input");
+        imagelink.id="imagelink";
+        var basicbutton=document.createElement("button")
+        basicbutton.setAttribute("onclick","objcreation();return false");
+        basicbutton.id="basic-btn";
+        basicbutton.innerHTML='submit';
+        myform.appendChild(a);
+        myform.appendChild(productname);
+        myform.appendChild(document.createElement("br"));
+        myform.appendChild(b);
+        myform.appendChild(description);
+        myform.appendChild(document.createElement("br"));
+        myform.appendChild(c);
+        myform.appendChild(baseprice);
+        myform.appendChild(d);
+        myform.appendChild(imagelink);
+        myform.appendChild(basicbutton);
+        document.body.appendChild(myform);
+        var productdetails=[];
+var myform2=document.createElement("form");
+myform2.id="form2";
+var e =document.createElement("p");
+e.innerHTML="size";
+var size =document.createElement("input");
+size.id="size"
+var f =document.createElement("p");
+f.innerHTML="color";
+var color=document.createElement("input");
+color.id="color";
+var g=document.createElement("p");
+g.innerHTML="material"
+var material=document.createElement("input");
+material.id="material";
+myform2.appendChild(e);
+myform2.appendChild(size);
+myform2.appendChild(f);
+myform2.appendChild(color);
+myform2.appendChild(g);
+myform2.appendChild(material);
+document.body.appendChild(myform2);
+ function objcreation(){
+   var pname=document.getElementById("productname").value;
+   var bprice=document.getElementById("baseprice").value;
+   var des=document.getElementById("description").value;
+   var image=document.getElementById("imagelink").value;
+   var colors=document.getElementById("color").value;
+   var size=document.getElementById("size").value;
+   var material=document.getElementById("material").value;
+ 
+   var sizevalues=[];
+   var colorvalues=[];
+   var materialvalues=[];
+   sizevalues.push(size.split(","));
+   colorvalues.push(colors.split(","));
+   materialvalues.push(material.split(","));
+   console.log(sizevalues);
+   
+   var varient={}
+varient.size=sizevalues;
+varient.color=colorvalues;
+varient.material=materialvalues;
+
+    var obj={};
+    obj.proname=pname;
+    obj.baseprice=bprice;
+    obj.description=des;
+    obj.imagelink=image;
+    obj.v=varient;
+    productdetails.push(obj);
+    console.log(obj);
+    display();
+generation(varient);
+
+    }
+    function display(){
+        console.log(productdetails);
+
+    }
+        
+function generation(productvarients){
+var sizearray=productvarients.size;
+var colorarray=productvarients.color;
+var materialarray=productvarients.material;
+console.log("@@@@@@@@@@@@@@@",sizearray);
+console.log("object:++++++++++++++++++++++++++",productvarients);
+console.log(productvarients.material);
+
+var combination=[];
+var product234={};
+// product234.size=sizearray[0];
+// product234.color=colorarray[0];
+console.log(product234);
+console.log("checn",sizearray);
+console.log("length",sizearray[0].length);
+
+console.log("first_index",productvarients.size[0][1]);
+
+for(let i=0;i<sizearray[0].length;i++)
+{
+    for(let j=0;j<colorarray[0].length;j++)
+    {
+        for(let k=0;k<materialarray[0].length;k++)
+        {
+            var product={};
+            product.size=sizearray[0][i];
+            product.color=colorarray[0][j];
+            product.material=materialarray[0][k];
+            combination.push(product);
+            
+        }
+    }
+}
+console.log("overall:",combination);
+
+
+
+
+    }
+    
+    </script>
+</body>
+</html>

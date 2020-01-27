@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Generating JSON from Javascript Form</title>
+    <style>
+        body{
+            background-color: #b491c8;
+        }
+        form{
+            border-style: solid;
+            border-color: black;
+            width: 500px;
+            
+        }
+        p{
+            font-style: oblique;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var Forms = document.createElement('form');
+        Forms.id = "Products";
+
+        var para = document.createElement('p');
+        para.innerHTML = "Product-Name : ";
+        var textBox_1 = document.createElement('input');
+        textBox_1.type = "textbox";
+        textBox_1.id = "NameOfProduct";
+        Forms.appendChild(para);
+        Forms.appendChild(textBox_1);
+
+        var description = document.createElement('p');
+        description.innerHTML = "Product-Description : ";
+        Forms.appendChild(description);
+        var descBox = document.createElement('input');
+        descBox.type = "textbox";
+        descBox.id = "DescProd";
+        Forms.appendChild(descBox);
+
+        var basePrice = document.createElement('p');
+        basePrice.innerHTML = "Base-Price of Product : ";
+        Forms.appendChild(basePrice);
+        var BaseBox = document.createElement('input');
+        BaseBox.type = "textbox";
+        BaseBox.id = "BaseBoxValue";
+        Forms.appendChild(BaseBox);
+        document.body.appendChild(Forms);
+        
+        var ImageLink = document.createElement('p');
+        ImageLink.innerHTML = "Product Image URL : ";
+        Forms.appendChild(ImageLink);
+        var ImageBox = document.createElement('input');
+        ImageBox.type = "textbox";
+        ImageBox.id = "url";
+        Forms.appendChild(ImageBox);
+
+        var SubmitButton = document.createElement('button');
+        SubmitButton.innerHTML = 'Submit';
+        SubmitButton.id = "btn";
+        Forms.appendChild(SubmitButton);
+        SubmitButton.setAttribute("onclick","jsonobject();return false");
+
+        document.body.appendChild(Forms);
+
+
+        function jsonobject(){
+            var ProductObject = {};
+            ProductObject.nameofprod = document.getElementById("NameOfProduct").value;
+            ProductObject.descriptOfProd = document.getElementById("DescProd").value;
+            ProductObject.baseOfProd = document.getElementById("BaseBoxValue").value;
+            ProductObject.ImageOfProd = document.getElementById("url").value;
+            console.log(ProductObject);
+
+
+        }
+
+    </script>
+    
+</body>
+</html>
