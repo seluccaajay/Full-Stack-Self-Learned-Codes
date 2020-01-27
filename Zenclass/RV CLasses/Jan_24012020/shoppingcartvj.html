@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+
+#proimage {
+    margin-left: 170px;
+    margin-top: -105px;
+
+}
+
+
+#proimage2 {
+     margin-left: 169px;
+margin-top: -59px;
+
+}
+#saree{ 
+        margin-top: -316px;
+    margin-left: 347px;
+}
+
+body{
+    background-color:#8c7535;
+}
+#cart{   
+      margin-left: 94%;
+    margin-top: 2px;
+    height: 45px;
+    background: 
+darkturquoise;
+
+     
+}
+
+
+</style>
+</head>
+<body>
+    <script>
+    var data= [
+     {
+          "productName" : "Casual Shirt",
+          "basePrice" : 500,
+          "image" : "http://placehold.it/100x100",
+          "description" : "Des",
+          "varients" : [
+               {
+                    "type" : "Size",
+                    "values" : ["XL","XXL"]
+               },
+               {
+                    "type" : "Meterial",
+                    "values" : ["cotton","silk"]
+               },
+               {
+                    "type" : "Color",
+                    "values" : ["yellow","red"]
+               }
+          ],
+          "varientDetails" : [
+               {
+                    "size" : "xl",
+                    "meterial" : "cotton",
+                    "color" : "red",
+                    "addOnprice" : 30
+               },
+               {
+                    "size" : "xl",
+                    "meterial" : "cotton",
+                    "color" : "yellow",
+                    "addOnprice" : 40
+               },
+               {
+                    "size" : "xl",
+                    "meterial" : "silk",
+                    "color" : "red",
+                    "addOnprice" : 50
+               },
+               {
+                    "size" : "xl",
+                    "meterial" : "silk",
+                    "color" : "yellow",
+                    "addOnprice" : 60
+               },
+               {
+                    "size" : "xxl",
+                    "meterial" : "cotton",
+                    "color" : "red",
+                    "addOnprice" : 70
+               },
+               {
+                    "size" : "xxl",
+                    "meterial" : "cotton",
+                    "color" : "yellow",
+                    "addOnprice" : 80
+               },
+               {
+                    "size" : "xxl",
+                    "meterial" : "silk",
+                    "color" : "red",
+                    "addOnprice" : 90
+               },
+               {
+                    "size" : "xxl",
+                    "meterial" : "silk",
+                    "color" : "yellow",
+                    "addOnprice" : 100
+               }
+          ]
+     },
+     {
+          "productName" : "Designer Saree",
+          "basePrice" : 5000,
+          "image" : "http://placehold.it/100x100",
+          "description" : "Des",
+          "varients" : [
+               {
+                    "type" : "Meterial",
+                    "values" : ["cotton","silk"]
+               },
+               {
+                    "type" : "Color",
+                    "values" : ["yellow","red"]
+               }
+          ],
+          "varientDetails" : [
+               {
+                    "meterial" : "cotton",
+                    "color" : "red",
+                    "addOnprice" : 30
+               },
+               {
+                    "meterial" : "cotton",
+                    "color" : "yellow",
+                    "addOnprice" : 40
+               },
+               {
+                    "meterial" : "silk",
+                    "color" : "red",
+                    "addOnprice" : 50
+               },
+               {
+                    "meterial" : "silk",
+                    "color" : "yellow",
+                    "addOnprice" : 60
+               }
+          ]
+     }
+]
+//creates the cart symbol
+var cart=document.createElement("img");
+cart.src="https://cdn4.iconfinder.com/data/icons/shopping-22/60/full_shopping_cart-512.png";
+cart.id="cart";
+document.body.append(cart);
+
+
+function shirtdiv(obj,id){
+       var shirt=document.createElement("div");
+     shirt.class="card";
+      shirt.id=id;
+    shirt.style.backgroundColor="#fcf8eb";
+    shirt.style.height="300px";
+    shirt.style.width="300px";
+
+var productName=obj.productName;
+console.log(typeof(productName));
+var image=obj.image;
+var productimage=document.createElement("img");
+
+
+//creates a drop down box for size
+var size=document.createElement("select");
+size.id="size";
+size.options[size.options.length] = new Option("XL");
+size.options[size.options.length] = new Option("XXL");
+
+//creates a drop down box for material
+var material=document.createElement("select");
+material.id="material";
+material.options[material.options.length] = new Option("Cotton");
+material.options[material.options.length] = new Option("Silk");
+
+//creates a drop down box for color
+var color=document.createElement("select");
+color.id="color";
+color.options[color.options.length] = new Option("Navy-Blue");
+color.options[color.options.length] = new Option("Gun-Metal");
+
+//creates a product image
+productimage.src=image;
+productimage.id="proimage";
+console.log(productName);
+
+//creates  a button for adding into the cart
+var btn=document.createElement("button");
+btn.innerHTML="add to cart";
+
+
+var h1=document.createElement("p");
+var h2=document.createElement("p");
+var h3=document.createElement("p");
+var h4=document.createElement("p");
+var h5=document.createElement("p");
+var h6=document.createElement("p");
+
+h3.innerHTML="Fit";
+h4.innerHTML="Material"
+h5.innerHTML="Color";
+h2.innerHTML=productName;
+// proinp.value=productName;
+h1.innerHTML="PRODUCT NAME";
+shirt.appendChild(h1);
+  shirt.appendChild(h2);
+// shirt.appendChild(productName);
+shirt.append(h3);
+shirt.append(productimage);
+shirt.append(size);
+shirt.append(h4);
+shirt.append(material);
+shirt.append(h5);
+shirt.append(color);
+shirt.append(btn);
+document.body.appendChild(shirt);
+}
+
+
+//sareediv
+function sareediv(obj){
+       var saree=document.createElement("div");
+     saree.class="card";
+      saree.id="saree";
+    saree.style.backgroundColor="#fcf8eb";
+    saree.style.height="300px";
+    saree.style.width="300px";
+
+var productName=obj.productName;
+console.log(typeof(productName));
+var image=obj.image;
+var productimage=document.createElement("img");
+
+
+//creates  a button for adding into the cart
+var btn=document.createElement("button");
+btn.innerHTML="add to cart";
+
+
+//creates a drop down box for material
+var material=document.createElement("select");
+material.id="material";
+material.options[material.options.length] = new Option("Cotton");
+material.options[material.options.length] = new Option("Silk");
+
+//creates a drop down box for color
+var color=document.createElement("select");
+color.id="color";
+color.options[color.options.length] = new Option("Violet");
+color.options[color.options.length] = new Option("Red");
+
+//creates a product image
+productimage.src=image;
+productimage.id="proimage2";
+console.log(productName);
+var h1=document.createElement("p");
+var h2=document.createElement("p");
+var h4=document.createElement("p");
+var h5=document.createElement("p");
+var h6=document.createElement("p");
+
+h4.innerHTML="Cloth Type"
+h5.innerHTML="Color";
+h2.innerHTML=productName;
+// proinp.value=productName;
+h1.innerHTML="PRODUCT NAME";
+saree.appendChild(h1);
+saree.appendChild(h2);
+// shirt.appendChild(productName);
+//saree.append(h3);
+saree.append(productimage);
+//saree.append(size);
+saree.append(h4);
+saree.append(material);
+saree.append(h5);
+saree.append(color);
+saree.append(btn);
+document.body.appendChild(saree);
+}
+
+
+ shirtdiv(data[0],"sdfiusdf");
+  sareediv(data[1]);
+   
+
+
+
+
+
+    
+    
+    
+    
+    </script>
+</body>
+</html>
