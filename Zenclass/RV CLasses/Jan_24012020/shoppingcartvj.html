@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+
+#proimage {
+     margin-left: 82px;
+    margin-top: 2px;
+    height: 200px;
+    width: 150px;
+
+}
+
+#shirt{
+
+     box-shadow: 8px 8px 8px;
+     background-color:#f7d3d0;
+
+height: 434px;
+
+width: 300px;
+}
+#displaycart{
+
+height:133px;
+width:300px;
+background-color:#f7d3d0;
+
+
+}
+#displaycart2{
+border-radius: 10px;
+
+height:133px;
+width:300px;
+background-color:white;
+
+
+}
+
+
+
+#proimage2 {
+     margin-left: 80px;
+margin-top: 4px;
+height: 200px;
+width: 150px;
+
+}
+#saree{ 
+     margin-top: -432px;
+
+margin-left: 347px;
+
+box-shadow: 8px 8px 8px;
+background-color:#f7d3d0;
+height: 433px;
+width: 300px;
+    margin-left: 347px;
+    box-shadow: 8px 8px 8px;
+    
+    width: 300px;
+}
+
+body{
+    background-color: #c9372c;
+}
+#spCart{   
+      margin-left: 94%;
+    margin-top: 2px;
+    height: 45px;
+    background: 
+darkturquoise;
+
+     
+}
+
+
+</style>
+</head>
+<body>
+    <script>
+    var json_object= [
+     {
+          "productName" : "T-Shirt",
+          "basePrice" : 500,
+          "image" : "http://placehold.it/150x200",
+          "description" : "Des",
+          "varients" : [
+               {
+                    "type" : "Size",
+                    "values" : ["xl","xxl"]
+               },
+               {
+                    "type" : "Meterial",
+                    "values" : ["cotton","silk"]
+               },
+               {
+                    "type" : "Color",
+                    "values" : ["yellow","red"]
+               }
+          ],
+          "varientDetails" : [
+               {
+                    "size" : "xl",
+                    "meterial" : "cotton",
+                    "color" : "red",
+                    "addOnprice" : 30
+               },
+               {
+                    "size" : "xl",
+                    "meterial" : "cotton",
+                    "color" : "yellow",
+                    "addOnprice" : 40
+               },
+               {
+                    "size" : "xl",
+                    "meterial" : "silk",
+                    "color" : "red",
+                    "addOnprice" : 50
+               },
+               {
+                    "size" : "xl",
+                    "meterial" : "silk",
+                    "color" : "yellow",
+                    "addOnprice" : 60
+               },
+               {
+                    "size" : "xxl",
+                    "meterial" : "cotton",
+                    "color" : "red",
+                    "addOnprice" : 70
+               },
+               {
+                    "size" : "xxl",
+                    "meterial" : "cotton",
+                    "color" : "yellow",
+                    "addOnprice" : 80
+               },
+               {
+                    "size" : "xxl",
+                    "meterial" : "silk",
+                    "color" : "red",
+                    "addOnprice" : 90
+               },
+               {
+                    "size" : "xxl",
+                    "meterial" : "silk",
+                    "color" : "yellow",
+                    "addOnprice" : 100
+               }
+          ]
+     },
+     {
+          "productName" : "Saree",
+          "basePrice" : 5000,
+          "image" : "http://placehold.it/150x200",
+          "description" : "Des",
+          "varients" : [
+               {
+                    "type" : "Meterial",
+                    "values" : ["cotton","silk"]
+               },
+               {
+                    "type" : "Color",
+                    "values" : ["yellow","red"]
+               }
+          ],
+          "varientDetails" : [
+               {
+                    "meterial" : "cotton",
+                    "color" : "red",
+                    "addOnprice" : 30
+               },
+               {
+                    "meterial" : "cotton",
+                    "color" : "yellow",
+                    "addOnprice" : 40
+               },
+               {
+                    "meterial" : "silk",
+                    "color" : "red",
+                    "addOnprice" : 50
+               },
+               {
+                    "meterial" : "silk",
+                    "color" : "yellow",
+                    "addOnprice" : 60
+               }
+          ]
+     }
+]
+//creates the cart symbol
+var spCart=document.createElement("img");
+spCart.src="https://cdn4.iconfinder.com/data/icons/shopping-22/60/full_shopping_kart-512.png";
+spCart.id="kart";
+document.body.append(spCart);
+// /spCart.setAttribute("onclick",displaycart());
+
+function createshirt(obj){
+       var shirt=document.createElement("div");
+     shirt.class="card";
+      shirt.id="shirt";
+
+var productName=obj.productName;
+console.log(typeof(productName));
+var image=obj.image;
+var productimage=document.createElement("img");
+
+
+//creates a drop down box for size
+var size=document.createElement("select");
+size.id="size";
+size.options[size.options.length] = new Option("xl");
+size.options[size.options.length] = new Option("xxl");
+
+//creates a drop down box for material
+var clothType=document.createElement("select");
+clothType.id="material";
+clothType.options[clothType.options.length] = new Option("cotton");
+clothType.options[clothType.options.length] = new Option("silk");
+
+//creates a drop down box for color
+var color=document.createElement("select");
+color.id="color";
+color.options[color.options.length] = new Option("yellow");
+color.options[color.options.length] = new Option("red");
+
+//creates a product image
+productimage.src="https://ae01.alicdn.com/kf/HTB1pwSpby6guuRkSmLyq6AulFXaL.jpg";
+productimage.id="proimage";
+console.log(productName);
+
+//creates  a button for adding into the spCart
+var buttonCreate=document.createElement("button");
+buttonCreate.innerHTML="add to cart";
+buttonCreate.setAttribute("onclick","getvalues()");
+
+
+var headOne=document.createElement("p");
+var headTwo=document.createElement("p");
+var headThree=document.createElement("p");
+var headFour=document.createElement("p");
+var headFive=document.createElement("p");
+var headSix=document.createElement("p");
+
+headThree.innerHTML="SIZE: ";
+headFour.innerHTML="MATERIAL: ";
+headFive.innerHTML="COLOR: ";
+headTwo.innerHTML=productName;
+// proinp.value=productName;
+headOne.innerHTML="PRODUCT NAME";
+shirt.append(productimage);
+shirt.appendChild(headOne);
+shirt.appendChild(headTwo);
+// shirt.appendChild(productName);
+headThree.append(size);
+shirt.append(headThree);
+headFour.append(clothType)
+shirt.append(headFour);
+headFive.append(color);
+shirt.append(headFive);
+shirt.append(buttonCreate);
+document.body.appendChild(shirt);
+}
+
+
+//createsaree
+function createsaree(obj){
+       var saree=document.createElement("div");
+     saree.class="card";
+      saree.id="saree";
+    
+
+var productName=obj.productName;
+console.log(typeof(productName));
+var image=obj.image;
+var productimage=document.createElement("img");
+
+
+//creates  a button for adding into the spCart
+var buttonCreate=document.createElement("button");
+buttonCreate.innerHTML="add to cart";
+buttonCreate.id="sareebutton";
+buttonCreate.setAttribute("onclick","getvaluesforsaree()");
+
+//creates a drop down box for clothType
+var clothType=document.createElement("select");
+clothType.id="material2";
+clothType.options[clothType.options.length] = new Option("cotton");
+clothType.options[clothType.options.length] = new Option("silk");
+
+//creates a drop down box for color
+var color=document.createElement("select");
+color.id="color2";
+color.options[color.options.length] = new Option("yellow");
+color.options[color.options.length] = new Option("red");
+
+//creates a product image
+productimage.src="http://2.bp.blogspot.com/-DKITG5SO-A4/TkVZnldjBMI/AAAAAAAAAoM/NQefe2ywktE/s1600/Georgette-Saree-Design.jpg";
+productimage.id="proimage2";
+console.log(productName);
+var headOne=document.createElement("p");
+var headTwo=document.createElement("p");
+var headFour=document.createElement("p");
+var headFive=document.createElement("p");
+var headSix=document.createElement("p");
+
+headFour.innerHTML="material: "
+headFive.innerHTML="color: ";
+headTwo.innerHTML=productName;
+// proinp.value=productName;
+headOne.innerHTML="PRODUCT NAME: ";
+headOne.appendChild(headTwo);
+saree.append(productimage);
+saree.appendChild(headOne);
+
+// shirt.appendChild(productName);
+//saree.append(headThree);
+
+//saree.append(size)
+headFour.append(material);
+saree.append(headFour);
+headFive.append(color);
+saree.append(headFive);
+saree.append(buttonCreate);
+document.body.appendChild(saree);
+}
+
+
+ createshirt(json_object[0]);
+  createsaree(json_object[1]);
+   function getvalues(){
+
+     var size=document.getElementById("size").value;
+     var clothType=document.getElementById("material").value;
+     var color=document.getElementById("color").value;
+     var checkinlength=    json_object[0].varientDetails.length;
+     
+     for(i=0;i<checkinlength;i++){
+          var count=0;
+          console.log(json_object[0].varientDetails[i].size);    
+          if(size==json_object[0].varientDetails[i].size)
+          count=count+1;
+          if(clothType==json_object[0].varientDetails[i].meterial)
+          count=count+1;
+          if(color==json_object[0].varientDetails[i].color)
+          count=count+1;
+          if(count==3){
+           
+          console.log(json_object[0].varientDetails[i].addOnprice);
+                var totalprice=json_object[0].varientDetails[i].addOnprice+json_object[0].basePrice;
+                var size1=json_object[0].varientDetails[i].size;
+                var material1=json_object[0].varientDetails[i].meterial;
+                var color1=json_object[0].varientDetails[i].color
+               displaycart(size1,material1,color1,totalprice)
+           break;    
+          }
+
+      }
+function displaycart(s,m,c,tp){
+     var displaybox=document.createElement("div");
+     displaybox.id="displaycart";
+     headOne=document.createElement("p");
+     headOne.innerHTML="size: ";
+     headOne.append(s);
+     displaybox.append(headOne);
+     headTwo=document.createElement("p");
+     headTwo.innerHTML="material: ";
+     headTwo.append(m);
+     displaybox.append(headTwo);
+     headThree=document.createElement("p");
+     headThree.innerHTML="color: ";
+     headThree.append(c);
+     displaybox.append(headThree);
+     headFour=document.createElement("p");
+     headFour.innerHTML="totalprice: ";
+     headFour.append(tp);
+     displaybox.append(headFour);
+//    displaybox.style.height="500px";
+//    displaybox.style.width="300px";
+//    displaybox.style.backgroundColor="grey";
+
+document.body.append(displaybox);
+}
+
+
+     }
+     function getvaluesforsaree(){
+          var clothType=document.getElementById("material2").value;
+          var color=document.getElementById("color2").value;
+          var checkinlength=    json_object[1].varientDetails.length;
+     
+               for(i=0;i<checkinlength;i++){
+                    var count=0;
+                    if(material1==json_object[1].varientDetails[i].meterial)
+                    count=count+1;
+                    if(color==json_object[1].varientDetails[i].color)
+                    count=count+1;
+                    if(count==2){
+                    
+                    console.log(json_object[1].varientDetails[i].addOnprice);
+                    var totalprice=json_object[1].varientDetails[i].addOnprice+json_object[1].basePrice;
+                    //var size1=json_object[0].varientDetails[i].size;
+                    var clothType1=json_object[1].varientDetails[i].meterial;
+                    var color1=json_object[1].varientDetails[i].color
+                    displaycart2(material1,color1,totalprice);
+                    break;    
+                    }
+
+               }
+               }
+     function displaycart2(m,c,tp){
+
+          var displaybox=document.createElement("div");
+          displaybox.id="displaycart2";
+          headTwo=document.createElement("p");
+          headTwo.innerHTML="material: ";
+          headTwo.append(m);
+          displaybox.append(headTwo);
+          headThree=document.createElement("p");
+          headThree.innerHTML="color: ";
+          headThree.append(c);
+          displaybox.append(headThree);
+          headFour=document.createElement("p");
+          headFour.innerHTML="totalprice: ";
+          headFour.append(tp);
+          displaybox.append(headFour);
+          document.body.append(displaybox);
+     }
+   
+    </script>
+</body>
+</html>
